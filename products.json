@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "name": "Artisan Sourdough Loaf",
+    "price": 8.50,
+    "image_url": "https://images.unsplash.com/photo-1585476263060-6550702f7902?auto=format&fit=crop&w=500&q=80",
+    "description": "Crusty outside, soft and airy inside. Fermented for 48 hours.",
+    "custom_explanation": "Our sourdough starter is 5 years old, giving this bread a distinct, tangy flavor profile that pairs perfectly with soups.",
+    "info": ["Vegan", "Nut-Free", "Daily Fresh"]
+  },
+  {
+    "id": 2,
+    "name": "Chocolate Croissant",
+    "price": 4.00,
+    "image_url": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=80",
+    "description": "Buttery, flaky pastry filled with rich dark chocolate batons.",
+    "info": ["Contains Dairy", "Sweet Treat", "Best Seller"]
+  },
+  {
+    "id": 3,
+    "name": "Blueberry Muffin",
+    "price": 3.50,
+    "image_url": "https://images.unsplash.com/photo-1558401367-17e30d8d7350?auto=format&fit=crop&w=500&q=80",
+    "description": "Moist muffin bursting with fresh organic blueberries.",
+    "info": ["Vegetarian", "Soft Texture"]
+  },
+  {
+    "id": 4,
+    "name": "Cinnamon Roll",
+    "price": 4.50,
+    "image_url": "https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=500&q=80",
+    "description": "Swirled with cinnamon sugar and topped with cream cheese frosting.",
+    "custom_explanation": "Served warm, these rolls are gooey, sticky, and the ultimate comfort food for a rainy day.",
+    "info": ["Contains Dairy", "High Sugar", "Warm"]
+  },
+  {
+    "id": 5,
+    "name": "Everything Bagel",
+    "price": 2.00,
+    "image_url": "https://images.unsplash.com/photo-1585476263075-7264a2752da3?auto=format&fit=crop&w=500&q=80",
+    "description": "New York style boiled bagel topped with sesame, poppy, onion, and garlic.",
+    "info": ["Vegan", "Savory", "Breakfast"]
+  },
+  {
+    "id": 6,
+    "name": "French Baguette",
+    "price": 3.00,
+    "image_url": "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&w=500&q=80",
+    "description": "Classic long thin loaf with a crisp crust.",
+    "info": ["Vegan", "Crispy", "Limited Stock"]
+  },
+  {
+    "id": 7,
+    "name": "Strawberry Tart",
+    "price": 6.00,
+    "image_url": "https://images.unsplash.com/photo-1563729768647-d3c1318d36b9?auto=format&fit=crop&w=500&q=80",
+    "description": "Shortcrust pastry filled with custard and topped with glazed strawberries.",
+    "info": ["Contains Eggs", "Chilled", "Seasonal"]
+  },
+  {
+    "id": 8,
+    "name": "Gluten-Free Brownie",
+    "price": 5.00,
+    "image_url": "https://images.unsplash.com/photo-1515037893149-de7f84175f02?auto=format&fit=crop&w=500&q=80",
+    "description": "Fudgy, rich chocolate brownie made with almond flour.",
+    "custom_explanation": "We use high-quality cocoa powder and almond flour to ensure these are safe for gluten-sensitive customers without sacrificing taste.",
+    "info": ["GF", "Contains Nuts", "Rich"]
+  }
+]
