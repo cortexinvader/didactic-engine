@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Order</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="logo-area">
+            <img id="logo-img" src="" alt="Logo">
+            <h1 id="business-name">Loading...</h1>
+        </div>
+        <button id="cart-toggle-btn" onclick="toggleCartView()">
+            <i class="fas fa-shopping-basket"></i>
+            <span id="cart-count">0</span>
+        </button>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="app">
+        
+        <!-- View: Product Listing -->
+        <section id="product-view" class="active-view">
+            <div class="hero">
+                <h2>Freshly Baked for You</h2>
+                <button class="ai-btn-hero" onclick="triggerAI('help_me_choose')">
+                    <i class="fas fa-magic"></i> Help me choose
+                </button>
+            </div>
+            <div id="product-grid" class="grid-container">
+                <!-- Products injected via JS -->
+            </div>
+        </section>
+
+        <!-- View: Cart & Checkout -->
+        <section id="checkout-view" class="hidden-view">
+            <div class="checkout-container">
+                <button class="back-btn" onclick="toggleCartView()">
+                    <i class="fas fa-arrow-left"></i> Back to Menu
+                </button>
+
+                <h2>Your Cart</h2>
+                <div id="cart-items-container">
+                    <!-- Cart items injected via JS -->
+                </div>
+                
+                <div class="cart-summary">
+                    <button class="ai-btn-sm" onclick="triggerAI('compare_cart')">
+                        <i class="fas fa-robot"></i> Compare items
+                    </button>
+                    <h3>Total: <span id="cart-total">0.00</span></h3>
+                </div>
+
+                <hr>
+
+                <h2>Checkout Details</h2>
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label for="c-name">Name *</label>
+                        <input type="text" id="c-name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="c-phone">Phone *</label>
+                        <input type="tel" id="c-phone" required placeholder="+1 234 567 890">
+                    </div>
+                    <div class="form-group">
+                        <label for="c-email">Email</label>
+                        <input type="email" id="c-email" placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="c-social">WhatsApp / Telegram ID (Optional)</label>
+                        <input type="text" id="c-social" placeholder="@johndoe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="c-message">Leave a Message (Optional)</label>
+                        <textarea id="c-message" rows="3" placeholder="Special instructions, allergies, or notes..."></textarea>
+                        <small>Note: This message is for this order only.</small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="reset-btn" onclick="resetUserInfo()">Reset Saved Info</button>
+                        <button type="submit" class="checkout-btn">Confirm Order</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- AI / Info Modal -->
+    <div id="ai-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title">AI Assistant</h3>
+            <p id="modal-text">...</p>
+            <div id="escalation-area">
+                <p id="escalation-msg"></p>
+                <div id="contact-buttons" class="contact-btn-group">
+                    <!-- Buttons injected via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="hidden">Order Sent Successfully!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
