@@ -1,0 +1,28 @@
+{
+  "business_name": "Fresh Bakery Delight",
+  "logo_url": "https://img.icons8.com/doodle/96/croissant--v1.png",
+  "telegram_bot_token": "YOUR_TELEGRAM_BOT_TOKEN_HERE",
+  "telegram_chat_id": "YOUR_TELEGRAM_CHAT_ID_HERE",
+  "contact": {
+    "phone": "+1234567890",
+    "email": "orders@freshbakery.com",
+    "whatsapp": "1234567890",
+    "telegram": "freshbakeryowner"
+  },
+  "supported_contact_types": ["whatsapp", "phone", "email"],
+  "currency": "USD",
+  "currency_symbol": "$",
+  "escalation_message": "Need more help? Contact a human directly:",
+  "ai_responses": {
+    "help_me_choose": [
+      "I recommend trying our Sourdough Loaf! It's a customer favorite.",
+      "If you have a sweet tooth, the Chocolate Croissants are divine today.",
+      "Our Bagels are fresh out of the oven and perfect for lunch."
+    ],
+    "explain_product_default": "This is one of our signature items, baked fresh daily using premium organic ingredients.",
+    "compare_cart": [
+      "You have a great mix of savory and sweet items. Perfect for a balanced treat!",
+      "Looks like you are planning a party! You might want to add a baguette to complete the table."
+    ]
+  }
+}
