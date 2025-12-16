@@ -277,8 +277,20 @@ function triggerAI(type, productId = null) {
         const opts = config.ai_responses.help_me_choose;
         text = opts[Math.floor(Math.random() * opts.length)];
     } else if (type === 'compare_cart') {
-        const opts = config.ai_responses.compare_cart;
-        text = Array.isArray(opts) ? opts[Math.floor(Math.random() * opts.length)] : opts;
+        if (cart.length === 0) {
+            showToast("Cart is already empty!");
+            closeModal(); // Close the modal since there's nothing to compare/clear
+            return;
+        }
+
+        if (confirm("Are you sure you want to clear the entire cart?")) {
+            cart = [];
+            saveCart();
+            renderCartItems();
+            showToast("Cart cleared!");
+        }
+        closeModal(); // Always close the modal after action
+        return; // Prevent modal from staying open
     }
 
     modalText.textContent = text;
