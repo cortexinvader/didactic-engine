@@ -204,6 +204,7 @@ checkoutForm.addEventListener('submit', async (e) => {
     let itemsList = cart.map(i => `- ${i.name} x${i.qty} (${config.currency_symbol}${(i.price*i.qty).toFixed(2)})`).join('\n');
     let totalVal = document.getElementById('cart-total').textContent;
 
+    
     const telegramMsg = `
 🆕 *New Order – ${config.business_name}*
 
@@ -220,7 +221,7 @@ ${itemsList}
 
 💰 *Total:* ${totalVal}
     `;
-
+    
     // 4. Send to Telegram
     const btn = document.querySelector('.checkout-btn');
     const originalText = btn.textContent;
