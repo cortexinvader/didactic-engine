@@ -48,11 +48,11 @@ function renderProducts() {
         
         return `
         <div class="product-card">
-            <img src="${p.image_url}" alt="${p.name}" class="product-img">
+            <img src="\( {p.image_url}" alt=" \){p.name}" class="product-img">
             <div class="card-details">
                 <div class="card-header">
                     <span class="p-name">${p.name}</span>
-                    <span class="p-price">${config.currency_symbol}${p.price.toFixed(2)}</span>
+                    <span class="p-price">\( {config.currency_symbol} \){p.price.toFixed(2)}</span>
                 </div>
                 <div class="p-desc">${p.description}</div>
                 <div class="info-tags">${tagsHtml}</div>
@@ -137,14 +137,14 @@ function renderCartItems() {
         <div class="cart-item">
             <div>
                 <strong>${item.name}</strong><br>
-                <small>${config.currency_symbol}${item.price} each</small>
+                <small>\( {config.currency_symbol} \){item.price} each</small>
             </div>
             <div class="cart-controls">
                 <button onclick="updateCartQty(${item.id}, -1)">-</button>
                 <span style="margin:0 10px">${item.qty}</span>
                 <button onclick="updateCartQty(${item.id}, 1)">+</button>
             </div>
-            <div>${config.currency_symbol}${itemTotal.toFixed(2)}</div>
+            <div>\( {config.currency_symbol} \){itemTotal.toFixed(2)}</div>
         </div>
         `;
     }).join('');
@@ -201,25 +201,26 @@ checkoutForm.addEventListener('submit', async (e) => {
     };
 
     // 3. Construct Message
-    let itemsList = cart.map(i => `- ${i.name} x${i.qty} (${config.currency_symbol}${(i.price*i.qty).toFixed(2)})`).join('\n');
+    let itemsList = cart.map(i => `- \( {i.name} x \){i.qty} (\( {config.currency_symbol} \){(i.price*i.qty).toFixed(2)})`).join('\n');
     let totalVal = document.getElementById('cart-total').textContent;
 
-    
     const telegramMsg = `
-🆕 *New Order – ${config.business_name}*
-
-👤 *Customer:* ${formData.name}
-📞 *Phone:* ${formData.phone}
-📧 *Email:* ${formData.email || 'N/A'}
-💬 *Social:* ${formData.social || 'N/A'}
-
-📝 *Message:*
-${formData.message || 'No message'}
-
-🛒 *Items:*
-${itemsList}
-
-💰 *Total:* ${totalVal}
+╭──⦿【 ⚡ NEW ORDER ALERT 】
+│ 🏪 Business : ${config.business_name}
+│
+│ 👤 Customer : ${formData.name}
+│ 📞 Phone    : ${formData.phone}
+│ 📧 Email    : ${formData.email || 'N/A'}
+│ 💬 Social   : ${formData.social || 'N/A'}
+│
+│ 📝 Message :
+│ ${formData.message || 'No message'}
+│
+│ 🛒 Items :
+│ ${itemsList}
+│
+│ 💰 Total : ${totalVal}
+╰────────⦿
     `;
     
     // 4. Send to Telegram
@@ -300,7 +301,7 @@ function triggerAI(type, productId = null) {
             a.className = 'contact-btn';
             a.href = href;
             a.target = '_blank';
-            a.innerHTML = `<i class="fas fa-${getIcon(type)}"></i> ${label}`;
+            a.innerHTML = `<i class="fas fa-\( {getIcon(type)}"></i> \){label}`;
             btnGroup.appendChild(a);
         }
     });
